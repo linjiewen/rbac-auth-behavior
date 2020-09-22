@@ -24,12 +24,12 @@ CREATE TABLE `xi_admin`  (
   `last_login_ip` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '最后登录IP',
   `allowance` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '请求剩余次数',
   `allowance_updated_at` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '请求更新时间',
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `username`(`username`, `is_trash`, `deleted_at`) USING BTREE,
-  UNIQUE INDEX `access_token`(`access_token`, `is_trash`, `deleted_at`) USING BTREE,
-  UNIQUE INDEX `auth_key`(`auth_key`, `is_trash`, `deleted_at`) USING BTREE,
-  UNIQUE INDEX `password_reset_token`(`password_reset_token`, `is_trash`, `deleted_at`) USING BTREE,
-  UNIQUE INDEX `mobile`(`mobile`, `is_trash`, `deleted_at`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '管理员' ROW_FORMAT = Compact;
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username`(`username`, `is_trash`, `deleted_at`),
+  UNIQUE INDEX `access_token`(`access_token`, `is_trash`, `deleted_at`),
+  UNIQUE INDEX `auth_key`(`auth_key`, `is_trash`, `deleted_at`),
+  UNIQUE INDEX `password_reset_token`(`password_reset_token`, `is_trash`, `deleted_at`),
+  UNIQUE INDEX `mobile`(`mobile`, `is_trash`, `deleted_at`)
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '管理员' ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;

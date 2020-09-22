@@ -52,7 +52,6 @@ class AdminPermission extends \yii\db\ActiveRecord
             [['status'], 'default', 'value' => 1],
 
             [['menu_id', 'title', 'is_trash', 'deleted_at'], 'unique', 'targetAttribute' => ['menu_id', 'title', 'is_trash', 'deleted_at'], 'message' => 'The menu_id and title combination already exists.'],
-            [['route', 'is_trash', 'deleted_at'], 'unique', 'targetAttribute' => ['route', 'is_trash', 'deleted_at'], 'message' => 'The route already exists.'],
             [['menu_id'], 'exist', 'skipOnError' => true, 'targetClass' => AdminMenu::className(), 'targetAttribute' => ['menu_id' => 'id']],
         ];
     }
